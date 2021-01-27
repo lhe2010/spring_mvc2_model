@@ -10,18 +10,24 @@
 	<!-- DispatcherServlet Context: defines this servlet's request-processing infrastructure -->
 	
 	<!-- Enables the Spring MVC @Controller programming model -->
+	<!-- 어노테이션을 사용가능하도록 설정 -->
 	<annotation-driven />
 
 	<!-- Handles HTTP GET requests for /resources/** by efficiently serving up static resources in the ${webappRoot}/resources directory -->
 	<resources mapping="/resources/**" location="/resources/" />
 
 	<!-- Resolves views selected for rendering by @Controllers to .jsp resources in the /WEB-INF/views directory -->
+	<!-- 뷰(jsp)의 접두어/접미어 설정 -->
 	<beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-		<beans:property name="prefix" value="/WEB-INF/views/" />
-		<beans:property name="suffix" value=".jsp" />
+		<beans:property name="prefix" value="/WEB-INF/views/" /> 	<!-- 접두어 -->
+		<beans:property name="suffix" value=".jsp" />				<!-- 접미어 -->
 	</beans:bean>
 	
+	<!-- 어노테이션을 스캔한다.  -->
 	<context:component-scan base-package="com.spring.boardEx01" />
+	<context:component-scan base-package="com.spring.boardEx01.controller" />
+	<context:component-scan base-package="com.spring.boardEx01.dao" />
+	<context:component-scan base-package="com.spring.boardEx01.dto" />
 	
 	
 	
