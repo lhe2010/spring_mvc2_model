@@ -33,4 +33,15 @@ public class BoardController {
 		
 		return "boardEx01/bList";
 	}
+	
+	@RequestMapping(value="/boardWrite", method = RequestMethod.GET)
+	public String boardWriteForm() {
+		return "boardEx01/bWrite";
+	}
+	
+	@RequestMapping(value="/boardWrite", method = RequestMethod.POST)
+	public String boardWriteAction() {
+		return "";
+	}
+	
 }
