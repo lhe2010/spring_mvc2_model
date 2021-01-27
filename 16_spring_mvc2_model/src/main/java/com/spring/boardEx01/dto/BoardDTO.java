@@ -1,5 +1,7 @@
 package com.spring.boardEx01.dto;
 
+import java.util.Date;
+
 public class BoardDTO {
 	
 	private int num;
@@ -7,7 +9,7 @@ public class BoardDTO {
 	private String email;
 	private String subject;
 	private String password;
-	private String regDate;
+	private Date regDate;
 	private int readCount;
 	private String content;
 	
@@ -41,10 +43,10 @@ public class BoardDTO {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	public String getRegDate() {
+	public Date getRegDate() {
 		return regDate;
 	}
-	public void setRegDate(String regDate) {
+	public void setRegDate(Date regDate) {
 		this.regDate = regDate;
 	}
 	public int getReadCount() {
