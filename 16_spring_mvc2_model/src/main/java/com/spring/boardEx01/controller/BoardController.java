@@ -40,8 +40,10 @@ public class BoardController {
 	}
 	
 	@RequestMapping(value="/boardWrite", method = RequestMethod.POST)
-	public String boardWriteAction() {
-		return "";
+	public String boardWriteAction(BoardDTO bdto) {
+		
+		boardService.insert(bdto);
+		return "redirect:boardList";		// redirect:해당 페이지로 이동한다. 
 	}
 	
 }

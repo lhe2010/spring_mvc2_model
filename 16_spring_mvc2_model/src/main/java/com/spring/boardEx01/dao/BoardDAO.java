@@ -7,5 +7,6 @@ import com.spring.boardEx01.dto.BoardDTO;
 public interface BoardDAO {
 	
 	public List<BoardDTO> getAllBoard();
+	public void insertBoard(BoardDTO bdto);
 
 }

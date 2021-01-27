@@ -13,4 +13,23 @@
 		FROM
 			BOARD;
 	</select>
+	
+	<insert id="insertBoard">
+		INSERT INTO BOARD (
+			WRITER,
+			EMAIL,
+			SUBJECT,
+			PASSWORD,
+			REG_DATE,
+			READ_COUNT,
+			CONTENT)
+		VALUES (
+			#{writer},
+			#{email},
+			#{subject},
+			#{password},
+			now(),
+			#{readCount},
+			#{content});
+	</insert>
 </mapper>
