@@ -26,7 +26,7 @@ public class BoardController {
 	}
 	
 	@RequestMapping(value = "/boardList")
-	public String boardList(Model model) {
+	public String boardList(Model model) throws Exception {
 		
 		List<BoardDTO> boardList = boardService.listAll(); 
 		model.addAttribute("boardList", boardList);		// model.addAttribute("boardList", boardService.listAll());
@@ -40,7 +40,7 @@ public class BoardController {
 	}
 	
 	@RequestMapping(value="/boardWrite", method = RequestMethod.POST)
-	public String boardWriteAction(BoardDTO bdto) {
+	public String boardWriteAction(BoardDTO bdto) throws Exception {
 		
 		boardService.insert(bdto);
 		return "redirect:boardList";		// redirect:해당 페이지로 이동한다. 

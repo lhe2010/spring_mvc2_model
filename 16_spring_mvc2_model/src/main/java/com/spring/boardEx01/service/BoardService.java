@@ -5,6 +5,6 @@ import java.util.List;
 import com.spring.boardEx01.dto.BoardDTO;
 
 public interface BoardService {
-	public List<BoardDTO> listAll();
-	public void insert(BoardDTO bdto);
+	public List<BoardDTO> listAll() throws Exception;
+	public void insert(BoardDTO bdto) throws Exception;
 }

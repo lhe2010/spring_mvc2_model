@@ -16,12 +16,12 @@ public class BoardServiceImpl implements BoardService {
 	private BoardDAO dao;	// Board 객체를 스프링에서 생성하여 주입시킴
 	
 	@Override
-	public List<BoardDTO> listAll() {
+	public List<BoardDTO> listAll() throws Exception {
 		return dao.getAllBoard();
 	}
 
 	@Override
-	public void insert(BoardDTO bdto) {
+	public void insert(BoardDTO bdto) throws Exception {
 		dao.insertBoard(bdto);
 	}
 
