@@ -31,5 +31,17 @@ public class BoardServiceImpl implements BoardService {
 		return dao.getOneBoard(num);
 	}
 
+	@Override
+	public boolean modify(BoardDTO bdto) throws Exception {
+		boolean isSucceed = false;
+		
+		if(dao.validateUserCheck(bdto) != null) {	// 스프링은 조회되는 것이 없으면 null 리턴
+			dao.updateBoard(bdto);
+			isSucceed = true;
+		}
+		
+		return isSucceed;
+	}
+
 
 }

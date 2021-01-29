@@ -54,4 +54,21 @@ public class BoardController {
 		return "boardEx01/bInfo";
 	}
 	
+	// 수정하기 버튼을 누르면, get으로 num 만 받은경우. 받아온 값을 조회해서 뿌린다. 
+	@RequestMapping(value="/boardUpdate", method = RequestMethod.GET)
+	public String boardUpdateForm(@RequestParam("num") int num, Model model) throws Exception {
+		BoardDTO bdto = boardService.read(num);
+		model.addAttribute("bdto", bdto);
+		return "boardEx01/bUpdate";
+	}
+	
+	// 다른 부분. 글수정 버튼을 누르면, post로 form의 내용을 받아온다.
+	@RequestMapping(value="/boardUpdate", method = RequestMethod.POST)
+	public String boardUpdate(BoardDTO bdto, Model model) throws Exception {
+		if(boardService.modify(bdto))	model.addAttribute("success", true);
+		else							model.addAttribute("success", false);
+		
+		return "boardEx01/bUpdatePro";
+	}
+	
 }

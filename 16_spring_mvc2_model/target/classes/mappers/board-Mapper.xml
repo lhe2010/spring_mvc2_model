@@ -50,4 +50,23 @@
 		WHERE
 			NUM = #{num}
 	</update>
+	
+	<update id="updateBoard">
+		UPDATE
+			BOARD
+		SET
+			SUBJECT=#{subject},
+			CONTENT=#{content}
+		WHERE
+			NUM=#{num}
+	</update>
+	
+	<select id="validateUserCheck" resultType="com.spring.boardEx01.dto.BoardDTO">
+		SELECT 
+			*
+		FROM
+			BOARD
+		WHERE 
+			NUM = #{num} AND PASSWORD = #{password}
+	</select>
 </mapper>

@@ -25,12 +25,24 @@ public class BoardDAOImpl implements BoardDAO {
 
 	@Override
 	public BoardDTO getOneBoard(int num) throws Exception {
-		return session.selectOne("com.spring.mapper.BoardMapper.getOneBoard", num);
+		// 하나만 가져오므로 selectOne()
+		return session.selectOne("com.spring.mapper.BoardMapper.getOneBoard", num); 
 	}
 
 	@Override
 	public void increaseReadCount(int num) throws Exception {
 		session.update("com.spring.mapper.BoardMapper.increaseReadCount", num);
+	}
+
+	@Override
+	public void updateBoard(BoardDTO bdto) throws Exception {
+		session.update("com.spring.mapper.BoardMapper.updateBoard", bdto);
+	}
+
+	@Override
+	public BoardDTO validateUserCheck(BoardDTO bdto) throws Exception {
+		// 하나를 리턴하므로 selectOne
+		return session.selectOne("com.spring.mapper.BoardMapper.validateUserCheck", bdto);
 	}
 
 }
