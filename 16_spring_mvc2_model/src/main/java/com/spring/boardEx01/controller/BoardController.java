@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.spring.boardEx01.dto.BoardDTO;
 import com.spring.boardEx01.service.BoardService;
@@ -44,6 +45,13 @@ public class BoardController {
 		
 		boardService.insert(bdto);
 		return "redirect:boardList";		// redirect:해당 페이지로 이동한다. 
+	}
+	
+	@RequestMapping(value="/boardInfo")
+	public String boardInfo(@RequestParam("num") int num, Model model) throws Exception {
+		BoardDTO bdto = boardService.read(num);
+		model.addAttribute("bdto", bdto);
+		return "boardEx01/bInfo";
 	}
 	
 }
