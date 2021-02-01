@@ -9,4 +9,6 @@ public interface BoardService {
 	public void insert(BoardDTO bdto) throws Exception;
 	public BoardDTO read(int num) throws Exception;	// 조회수올리는 것은 따로 만들지 않음
 	public boolean modify(BoardDTO bdto) throws Exception;
+	
+	public boolean remove(BoardDTO bdto) throws Exception;
 }

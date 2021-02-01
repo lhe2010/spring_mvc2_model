@@ -69,4 +69,12 @@
 		WHERE 
 			NUM = #{num} AND PASSWORD = #{password}
 	</select>
+	
+	<delete id="deleteBoard">
+		DELETE FROM
+			BOARD
+		WHERE
+			NUM=#{num}
+	</delete>
+	
 </mapper>

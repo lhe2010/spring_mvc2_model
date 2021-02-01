@@ -12,4 +12,6 @@ public interface BoardDAO {
 	public void increaseReadCount(int num) throws Exception;
 	public void updateBoard(BoardDTO bdto) throws Exception;
 	public BoardDTO validateUserCheck(BoardDTO bdto) throws Exception;	// 반환형태 주의
+	public void deleteBoard(int num) throws Exception;
+
 }
